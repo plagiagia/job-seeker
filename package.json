@@ -1,1 +1,18 @@
-{"name":"job-seeker","version":"1.0.0","private":true,"type":"module","engines":{"node":">=24"},"scripts":{"start":"node --env-file-if-exists=.env server.js","dev":"node --watch --env-file-if-exists=.env server.js","test":"node --test"}}
+{
+  "name": "job-seeker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env local.js",
+    "dev": "node --watch --env-file-if-exists=.env local.js",
+    "test": "node --test",
+    "build": "node --check server.js && node --check store.js && node --check public/app.js"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.18.0"
+  }
+}
